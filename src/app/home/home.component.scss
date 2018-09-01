@@ -1,0 +1,43 @@
+@keyframes bgblend {
+  0%   {background-color: skyblue;}
+  50% {background-color: orange;}
+  100% {background-color: skyblue;}
+}
+
+
+@keyframes textcolor {
+  0%   {background-color: red;}
+  20% {background-color: orange;}
+  40% {background-color: yellow;}
+  60% {background-color: green;}
+  80% {background-color: blue;}
+  100% {background-color: violet;}
+}
+
+
+ .container {
+  width: 100vw;
+  height: 100vh;
+  animation-name: bgblend;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container p, h2, h1, h3, h4, span {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+h2 {
+  animation-name: textcolor;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+
+
