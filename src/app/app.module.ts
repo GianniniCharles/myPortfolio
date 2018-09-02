@@ -5,16 +5,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'/home', pathMatch: 'full'},
+  {path: '', redirectTo:'/landing', pathMatch: 'full'},
+  {path: 'landing', component: LandingComponent},
   {path: 'home', component: HomeComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,188 @@
+// Variables ================================================================
+  //You can set variables to represent values and relative values
+$sky: skyblue;
+$sky2: $sky - 200;
+$orange: orange;
+$noMargin: 0vh;
+$noPadding: 0vh;
+$typingAnimationDuration: 2s;
+
+
+
+
+//Global Positioning Helpers ================================================================
+
 body {
+  margin: $noMargin;
+  padding: $noPadding;
+}
+
+.barrier {
+  margin: 5vh 0 5vh 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container p, h2, h1, h3, h4, span {
   margin: 0px;
   padding: 0px;
+  color: red;
+}
+
+h2 {
+  animation-name: textcolor;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+
+// .animatedText:hover{
+//   animation: fadeAndScale .3s cubic-bezier(.54,1.59,.38,1.91);
+//   transform-origin: center bottom;
+// }
+
+//Global Animations Library ================================================================
+@keyframes bgblend {
+  0%   {background-color: $sky2;}
+  10%  {background-color: $sky2;}
+  20% {background-color: $orange;}
+  51% {background-color: $sky;}
+  75% {background-color: $orange;}
+  100% {background-color: $sky2;}
+
+  // Sky2, orange, sky, orange sky2
+}
+
+@keyframes textcolor {
+  0%   {color: red;}
+  20% {color: orange;}
+  40% {color: yellow;}
+  60% {color: green;}
+  80% {color: blue;}
+  97% {color: violet;}
+  100% {color: red;}
+}
+
+@keyframes hideFromStart {
+   from { opacity: 0; } to { opacity: 0 } 
+}
+
+@keyframes show {
+  0% {opacity: 0;}
+  1% {opacity: 1;}
+  100% {opacity: 1}
+}
+ 
+
+.animatedText:active {
+  animation: fadeAndScale2 .3s cubic-bezier(.54,1.59,.38,1.91);
+  transform-origin: center bottom; 
+  animation-iteration-count: 1;
+}
+
+
+
+@keyframes fadeAndScale {
+  from {
+    opacity: 0;
+    transform: scale3d(.75, .75, 1)
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fadeAndScale2 {
+  from {
+    opacity: 0;
+    transform: scale3d(.75, .75, 1)
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+
+@keyframes typeLetters {
+  0% {
+    width: 0ch;
+  }
+  100% {
+    //set width to str.length
+    width: 33ch;
+  }
+}
+
+.zaft h1 {
+  margin: $noMargin;
+  animation: type $typingAnimationDuration steps(33);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// Page-Specific SCSS =============================================================
+
+
+
+//landingPage --------------------------------------------------------------
+.landingPage {
+  width: 100vw;
+  height: 100vh;
+  animation-name: bgblend;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+    //In SASS/SCSS you can nest child elements so less css selector work needed
+    p, h2, h1, h3, h4, span {
+      // color: red;
+    }
+
+    .typeMe {
+      animation-name: typeLetters;
+      animation-duration: 2s;
+      animation-timing-function: steps(33);
+      animation-iteration-count:1;
+      overflow: hidden;      
+
+      .first {
+        animation-delay: $typingAnimationDuration *0;
+      }
+
+      .second {
+        animation-delay: $typingAnimationDuration *1;
+      }
+
+      .third {
+       animation-delay: $typingAnimationDuration *2;
+      }
+    }
+
+}
+
+
+
+h2 {
+  animation-name: textcolor;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
