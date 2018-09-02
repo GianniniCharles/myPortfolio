@@ -6,6 +6,20 @@ $orange: orange;
 $noMargin: 0vh;
 $noPadding: 0vh;
 $typingAnimationDuration: 2s;
+$bannertext: 13vw;
+$typedText: 15vw;
+$letterSpacing:1px;
+
+$firstToAnimate: 0.5*0s;
+$secondToAnimate: 0.5*1s;
+$thirdToAnimate: 0.5*2s;
+$fourthToAnimate: 0.5*3s;
+
+
+@media only screen and (min-width: 1024px){
+
+}
+
 
 
 
@@ -35,20 +49,40 @@ body {
 .container p, h2, h1, h3, h4, span {
   margin: 0px;
   padding: 0px;
-  color: red;
+
 }
 
-h2 {
-  animation-name: textcolor;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-}
+// h2 {
+//   animation-name: textcolor;
+//   animation-duration: 10s;
+//   animation-iteration-count: infinite;
+// }
 
 
 // .animatedText:hover{
 //   animation: fadeAndScale .3s cubic-bezier(.54,1.59,.38,1.91);
 //   transform-origin: center bottom;
 // }
+
+//Global Mixins Library =============================================================
+
+  //Mixins are collections of CSS Rules that you package with an argument to reuse
+  //they can be used in multiple ways by changing the value of arguments you pass them.
+@mixin typedItem($animationDelay){
+  font-size: $typedText;
+  letter-spacing: $letterSpacing;
+  animation: typing 0.6s;
+  animation-delay: $animationDelay;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  // white-space: nowrap;
+}
+
+
+
+
+
 
 //Global Animations Library ================================================================
 @keyframes bgblend {
@@ -62,15 +96,15 @@ h2 {
   // Sky2, orange, sky, orange sky2
 }
 
-@keyframes textcolor {
-  0%   {color: red;}
-  20% {color: orange;}
-  40% {color: yellow;}
-  60% {color: green;}
-  80% {color: blue;}
-  97% {color: violet;}
-  100% {color: red;}
-}
+// @keyframes textcolor {
+//   0%   {color: red;}
+//   20% {color: orange;}
+//   40% {color: yellow;}
+//   60% {color: green;}
+//   80% {color: blue;}
+//   97% {color: violet;}
+//   100% {color: red;}
+// }
 
 @keyframes hideFromStart {
    from { opacity: 0; } to { opacity: 0 } 
@@ -88,7 +122,6 @@ h2 {
   transform-origin: center bottom; 
   animation-iteration-count: 1;
 }
-
 
 
 @keyframes fadeAndScale {
@@ -116,23 +149,30 @@ h2 {
 }
 
 
-
-@keyframes typeLetters {
+@keyframes typing {
   0% {
-    width: 0ch;
+    width: 0%;
+    font-size: $typedText;
+        color: red;
+        text-shadow: 2px 2px px rgba(255,255,255, 0.4);
+        white-space: nowrap;
   }
+
   100% {
-    //set width to str.length
-    width: 33ch;
+    width: 100%;
+    font-size: $typedText;
+        color: red;
+        text-shadow: 2px 2px 10px rgba(255,255,255, 0.4);
+        white-space: nowrap;
+
   }
+
 }
 
-.zaft h1 {
-  margin: $noMargin;
-  animation: type $typingAnimationDuration steps(33);
-  overflow: hidden;
-  white-space: nowrap;
-}
+
+
+
+
 
 // Page-Specific SCSS =============================================================
 
@@ -140,13 +180,13 @@ h2 {
 
 //landingPage --------------------------------------------------------------
 .landingPage {
+  margin: $noMargin;
   width: 100vw;
   height: 100vh;
   animation-name: bgblend;
   animation-duration: 30s;
   animation-iteration-count: infinite;
 
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,32 +197,47 @@ h2 {
       // color: red;
     }
 
-    .typeMe {
-      animation-name: typeLetters;
-      animation-duration: 2s;
-      animation-timing-function: steps(33);
-      animation-iteration-count:1;
-      overflow: hidden;      
-
-      .first {
-        animation-delay: $typingAnimationDuration *0;
-      }
-
-      .second {
-        animation-delay: $typingAnimationDuration *1;
-      }
-
-      .third {
-       animation-delay: $typingAnimationDuration *2;
-      }
+    .theBanner {
+      background-color: rgba(0,0,0,0.7);
+      padding: 4vh 4vw 4vh 4vw;
+      font-size: $bannertext;
+      color: red;
+      text-shadow: 2px 2px 5px #fff;
     }
 
+    
+
+    .typed::first-letter {
+      font-size: $typedText;
+      color: red;
+      text-shadow: 2px 2px 5px #fff;
+
+    }
+
+
+
+
+    .typefirst {
+      @include typedItem(0s);
+    }
+
+    .typesecond {
+      @include typedItem(0.5s);
+    }
+
+    .typethird {
+      @include typedItem(1s);
+    }
+
+    .typefourth {
+      @include typedItem(1.5s);
+    }
+
+
+
+
+
+
 }
 
 
-
-h2 {
-  animation-name: textcolor;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-}
