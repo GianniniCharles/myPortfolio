@@ -6,8 +6,8 @@ $orange: orange;
 $noMargin: 0vh;
 $noPadding: 0vh;
 $typingAnimationDuration: 2s;
-$bannertext: 13vw;
-$typedText: 15vw;
+$bannertext: calc(4em + 1vw);
+$typedText: calc(2em + 1vw);
 $letterSpacing:1px;
 
 $firstToAnimate: 0.5*0s;
@@ -188,7 +188,7 @@ body {
 
 //landingPage --------------------------------------------------------------
 .landingPage {
- 
+  position: relative;
   // animation-name: bgblend;
   animation-duration: 30s;
   animation-iteration-count: infinite;
@@ -211,8 +211,6 @@ body {
       animation-timing-function: ease forwards;
       animation-fill-mode: forwards;
     }
-
-    
 
     .typed::first-letter {
       font-size: $typedText;
@@ -240,27 +238,21 @@ body {
       @include typedItem(1.5s);
     }
 
-
-
-
-
-
 }
 
 
 .systemAnimation {
+  position: absolute;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  z-index: 3;
 }
 
 .starsbg {
-  position: relative;
-  height: 500px;
-  width: 100%;
-  
-
-  
-
+  position: absolute;
+  z-index: 1;
+  min-height: 100vh;
+  min-width: 100vw;
 } //end starsbg
