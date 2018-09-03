@@ -6,7 +6,7 @@ $orange: orange;
 $noMargin: 0vh;
 $noPadding: 0vh;
 $typingAnimationDuration: 2s;
-$bannertext: calc(4em + 1vw);
+$bannertext: calc(3em + 1vw);
 $typedText: calc(2em + 1vw);
 $letterSpacing:1px;
 
@@ -77,7 +77,6 @@ body {
   overflow: hidden;
   // white-space: nowrap;
 }
-
 
 
 
@@ -241,7 +240,20 @@ body {
 }
 
 
+@keyframes dropin {
+  0% {}
+  100% {transform: translateY(0vh)}
+}
+
 .systemAnimation {
+  min-width: 100vw;
+  min-height: 100vh;
+  transform: translateY(-100vh);
+  animation: dropin 0.1s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  background-color: rgba(153, 219, 255, 0.2);
   position: absolute;
   display: flex;
   justify-content: center;
