@@ -6,8 +6,8 @@ $orange: orange;
 $noMargin: 0vh;
 $noPadding: 0vh;
 $typingAnimationDuration: 2s;
-$bannertext: calc(3em + 1vw);
-$typedText: calc(2em + 1vw);
+$bannertext: calc(1em + 1vw);
+$typedText: calc(1em +1vw);
 $letterSpacing:1px;
 
 $firstToAnimate: 0.5*0s;
@@ -24,6 +24,58 @@ $fourthToAnimate: 0.5*3s;
 
 //Global Positioning Helpers ================================================================
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0; 
+}
+ 
+
+
+//My Global Helpers----------------------------------------------------------------------
 body {
   margin: $noMargin;
   padding: $noPadding;
@@ -198,14 +250,13 @@ body {
     }
 
     .theBanner {
-      background-color: rgba(0,0,0,0.7);
+      background-color: rgba(0, 0, 0, 0.856);
       padding: 4vh 4vw 4vh 4vw;
+      text-align: center;
       font-size: $bannertext;
       color: red;
       text-shadow: 2px 2px 5px #fff;
-      position: relative;
-      top: -100vh;
-      animation: popup 0.2s;
+      animation: dropin 0.2s;
       animation-delay: 2s;
       animation-timing-function: ease forwards;
       animation-fill-mode: forwards;
