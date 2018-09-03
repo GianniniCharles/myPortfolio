@@ -16,9 +16,7 @@ $thirdToAnimate: 0.5*2s;
 $fourthToAnimate: 0.5*3s;
 
 
-@media only screen and (min-width: 1024px){
 
-}
 
 
 
@@ -170,6 +168,15 @@ body {
 }
 
 
+@keyframes popup {
+  0% {}
+  90% {transform: translateY(110vh)}
+  100% {transform: translateY(100vh)}
+
+
+
+
+}
 
 
 
@@ -181,8 +188,8 @@ body {
 //landingPage --------------------------------------------------------------
 .landingPage {
   margin: $noMargin;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   animation-name: bgblend;
   animation-duration: 30s;
   animation-iteration-count: infinite;
@@ -203,6 +210,12 @@ body {
       font-size: $bannertext;
       color: red;
       text-shadow: 2px 2px 5px #fff;
+      position: relative;
+      top: -100vh;
+      animation: popup 0.2s;
+      animation-delay: 2s;
+      animation-timing-function: ease forwards;
+      animation-fill-mode: forwards;
     }
 
     
