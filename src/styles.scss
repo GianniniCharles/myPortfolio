@@ -34,14 +34,15 @@ body {
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
 
-  text-align: center;
+  margin: $noMargin;
+  min-width: 100vw;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
 }
 
 .container p, h2, h1, h3, h4, span {
@@ -187,17 +188,10 @@ body {
 
 //landingPage --------------------------------------------------------------
 .landingPage {
-  margin: $noMargin;
-  min-width: 100vw;
-  min-height: 100vh;
-  animation-name: bgblend;
+ 
+  // animation-name: bgblend;
   animation-duration: 30s;
   animation-iteration-count: infinite;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 
     //In SASS/SCSS you can nest child elements so less css selector work needed
     p, h2, h1, h3, h4, span {
@@ -254,3 +248,19 @@ body {
 }
 
 
+.systemAnimation {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.starsbg {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  
+
+  
+
+} //end starsbg
