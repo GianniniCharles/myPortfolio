@@ -90,6 +90,7 @@ body {
 @media(max-width:568px){
   .img1, .img2, .img3, .img4, .img5 {
     background-attachment: scroll;
+    background-size: contain;
   }
 
 }
@@ -529,7 +530,8 @@ body {
   .border{
     background-color: #111;
     color: #fff;
-    padding:20px;
+    width: 100%;
+    padding: 20 0 20 0;
   }
 
   .border.trans {
