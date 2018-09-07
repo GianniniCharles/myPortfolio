@@ -87,6 +87,13 @@ body {
 
 }
 
+@media(max-width:568px){
+  .img1, .img2, .img3, .img4, .img5 {
+    background-attachment: scroll;
+  }
+
+}
+
 .barrier {
   margin: 5vh 0 5vh 0;
 }
