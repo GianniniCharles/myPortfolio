@@ -387,7 +387,7 @@ body {
 
   .starsbgtext {
     position: absolute;
-    top: 85vh;
+    top: 80%;
     z-index: 4;
     text-align: center;
     display: flex;
@@ -456,7 +456,7 @@ body {
   color: #666;
 
 
-.img1, .img2, .img3 {
+.img1, .img2, .img3, .img4, .img5 {
   position: relative;
   opacity: 0.70;
   background-position: center;
@@ -483,6 +483,16 @@ body {
     min-height: 50vh;
   }
 
+  .img4 {
+    background-image:url('./assets/tournamaker.png');
+    min-height: 50vh;
+  }
+
+
+  .img5 {
+    background-image:url('./assets/sky.jpeg');
+    min-height: 50vh;
+  }
   .section {
     text-align:center;
     padding: 50px 80px;
@@ -527,5 +537,16 @@ body {
   h2 {
     font-size: $subText;
     padding-bottom: 15px;
+  }
+
+
+  .minidiv {
+    p {
+      color: black;
+    }
+    img {
+      max-width: 150px;
+      max-height: 150px;
+    }
   }
 }// end home page
