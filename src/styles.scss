@@ -91,8 +91,9 @@ body {
   margin: 5vh 0 5vh 0;
 }
 
-#page {
-
+.flexline {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .routerBox {
@@ -444,6 +445,10 @@ body {
 
 .home {
 
+  a {
+    color: white;
+    font-size: calc($homefont+5);
+  }
   font-size: $homefont;
   font-family: "Lato", sans-serif;
   font-weight:400;
@@ -469,12 +474,12 @@ body {
   }
 
   .img2 {
-    background-image:url('./assets/earth.jpg');
+    background-image:url('./assets/spaceDogfight.png');
     min-height: 50vh;
   }
 
   .img3 {
-    background-image:url('./assets/baloons.jpg');
+    background-image:url('./assets/PizzaBox.jpeg');
     min-height: 50vh;
   }
 
@@ -517,5 +522,10 @@ body {
   .wrapMe {
     line-height:2em;
 
+  }
+
+  h2 {
+    font-size: $subText;
+    padding-bottom: 15px;
   }
 }// end home page
