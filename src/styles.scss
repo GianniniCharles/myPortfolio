@@ -9,7 +9,8 @@ $typingAnimationDuration: 2s;
 $bannertext: calc(2em + 1vw);
 $bannerbg:  rgba(0, 0, 0, 0.856);
 $typedText: calc(2rem + 1vw);
-$subText: calc(1.4rem + 1vw);
+$typedTextM: calc(30px);
+$subText: calc(1.2rem + 1vw);
 $letterSpacing:1px;
 $firstToAnimate: 0.5*0s;
 $secondToAnimate: 0.5*1s;
@@ -161,8 +162,9 @@ body {
 
   //Mixins are collections of CSS Rules that you package with an argument to reuse
   //they can be used in multiple ways by changing the value of arguments you pass them.
+
 @mixin typedItem($animationDelay){
-  font-size: $typedText;
+  font-size: $typedTextM;
   letter-spacing: $letterSpacing;
   animation: typing 0.6s;
   animation-delay: $animationDelay;
@@ -414,7 +416,7 @@ body {
 
   .starsbgtext {
     position: absolute;
-    top: 80%;
+    top: 75%;
     z-index: 4;
     text-align: center;
     display: flex;
